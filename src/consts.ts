@@ -1,0 +1,1 @@
+export const WORDPRESS_REST = 'http://localhost:8881/wp-json/starlight/v1';

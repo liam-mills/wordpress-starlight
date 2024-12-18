@@ -1,0 +1,30 @@
+---
+import { WORDPRESS_REST } from '../consts';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Card } from '@astrojs/starlight/components';
+
+const { post } = Astro.props;
+
+let response = await fetch(WORDPRESS_REST + '/page/' + post.slug);
+let data = await response.json();
+
+export async function getStaticPaths() {
+    let allPages = await fetch(WORDPRESS_REST + '/pages');
+    let pages = await allPages.json();
+
+    return pages.map((page) => ({
+        params: {slug: page.slug},
+        props: {post: page}
+    }))
+}
+---
+<StarlightPage frontmatter={{
+    title: data.title,
+    tableOfContents: false
+}}>
+    {data.content.map((block) => {
+        if (block.blockName === 'acf/card') {
+            return <Card title={block.attrs.data.title} icon={block.attrs.data.icon} set:html={block.attrs.data.content}></Card>
+        }
+    })}
+</StarlightPage>
