@@ -1,6 +1,6 @@
 # WordPress Starlight
 
-A small starter frontend for fetching pages from a custom WordPress REST API endpoint.
+A small starter frontend for fetching pages from a custom WordPress REST API endpoint. Designed to be used alongside [Starlight Backend](https://github.com/liam-mills/starlight-backend).
 
 ## Commands
 
