@@ -1,12 +1,6 @@
-# Headless WordPress + Astro Starlight
+# WordPress Starlight
 
-A small starter theme for a headless WordPress frontend making use of Astro Starlight.
-
-## Prerequisites
-
-- Create a `.env` file in the project root folder, and populate the data as outlined in `.env.example`.
-- Have your WordPress instance running.
-- Configure WordPress permalinks to use "Post name" for the Permalink structure (Settings > Permalinks).
+A small starter frontend for fetching pages from a custom WordPress REST API endpoint.
 
 ## Commands
 
